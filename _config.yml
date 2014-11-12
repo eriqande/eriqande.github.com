@@ -5,8 +5,7 @@ link: https://github.com/eriqande/eriqande.githum.com
 copyright: US Federal Gov't Work. Public Domain.
 
 
-pygments: true
-permalink: '/:title'
+highlighter: pygments
 markdown: rdiscount
 
 exclude: [README.md]
