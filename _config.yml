@@ -6,7 +6,7 @@ copyright: US Federal Gov't Work. Public Domain.
 
 
 highlighter: pygments
-markdown: rdiscount
+markdown: redcarpet
 
 exclude: [README.md]
 

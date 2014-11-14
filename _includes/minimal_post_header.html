@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <title>{{ page.title }}</title>
+    
+        <link rel="stylesheet" href="/static/minimal/stylesheets/styles.css">
+        <link rel="stylesheet" href="/static/minimal/stylesheets/pygment_trac.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1><a href="/">{{ site.title }}</a></h1>
+                <p>{{ site.tagline }}</p>
+                <p></p>
+                <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css">
+                <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+                <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                  $("h2,h3,h4,h5,h6").each(function(i,item){
+                  var tag = $(item).get(0).localName;
+                  $(item).attr("id","wow"+i);
+                  $("#category").append('<a class="new'+tag+'" href="#wow'+i+'">'+$(this).text()+'</a></br>');
+                  $(".newh2").css("margin-left",0);
+                  $(".newh3").css("margin-left",20);
+                  $(".newh4").css("margin-left",40);
+                  $(".newh5").css("margin-left",60);
+                  $(".newh6").css("margin-left",80);
+                  });
+                });
+          </script>
+          <div id="category"></div>
+        </header>
+

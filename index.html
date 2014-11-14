@@ -4,8 +4,9 @@ title: Test index page using slate theme
 ---
 
 {% for post in site.posts %}
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    <span class="index_date"> {{ post.date | date_to_long_string }}</span>
-    <hr/>
+    <a href="{{ post.url }}">{{ post.title }}</a>:&nbsp;&nbsp;
+    <small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} .
+    {{ post.content | strip_html | truncatewords:35}}
+    <a href="{{ post.url }}">(read more...)</a></small><br><br>
 {% endfor %}
 
