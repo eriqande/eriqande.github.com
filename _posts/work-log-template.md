@@ -1,6 +1,7 @@
 ---
 layout: minimal_post
 title: Work Log
+published: false
 ---
 
 This week I have been relishing the chance to not have any lecture-writing
@@ -17,8 +18,7 @@ work on them this week._
 ### big-creek
 [_https://github.com/eriqande/big-creek (private repo)_](https://github.com/eriqande/big-creek)
 
-* I put in the code to run colony on the big creek data set from within R.  Got it all
-put in by Friday night.
+
 
 
 
@@ -49,11 +49,7 @@ and [_https://github.com/eriqande/flockture_](https://github.com/eriqande/flockt
 ### sib-prog-assess
 [_https://github.com/eriqande/sib-prog-assess_](https://github.com/eriqande/sib-prog-assess)
 
-### wiwa-popgen
 
-[_https://github.com/eriqande/wiwa-popgen_](https://github.com/eriqande/wiwa-popgen)
-
-* Finished what I hope is the final round of back and forth to get everything posted up onto Dryad.
 
 ## Teaching and Advising
 
