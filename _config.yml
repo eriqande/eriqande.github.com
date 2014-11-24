@@ -1,12 +1,12 @@
 title: Eric C. Anderson's Work-life 
 tagline: Open research with GitHub
 owner: Eric C. Anderson
-link: https://github.com/eriqande/eriqande.githum.com
+link: https://github.com/eriqande/eriqande.github.com
 copyright: US Federal Gov't Work. Public Domain.
-
+baseurl: http://eriqande.github.io
 
 highlighter: pygments
 markdown: redcarpet
 
-exclude: [README.md]
+exclude: [README.md,assets]
 
