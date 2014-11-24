@@ -8,5 +8,5 @@ url: http://eriqande.github.io
 highlighter: pygments
 markdown: redcarpet
 
-exclude: [README.md,assets]
+exclude: [README.md]
 
