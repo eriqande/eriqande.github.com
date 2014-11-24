@@ -3,7 +3,7 @@ tagline: Open research with GitHub
 owner: Eric C. Anderson
 link: https://github.com/eriqande/eriqande.github.com
 copyright: US Federal Gov't Work. Public Domain.
-baseurl: http://eriqande.github.io
+url: http://eriqande.github.io
 
 highlighter: pygments
 markdown: redcarpet
