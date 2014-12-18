@@ -31,6 +31,8 @@ and [_https://github.com/eriqande/flockture_](https://github.com/eriqande/flockt
 
 
 
+### Pata-chinook
+[_https://github.com/eriqande/pata-chinook_](https://github.com/eriqande/pata-chinook)
 
 
 
@@ -60,7 +62,7 @@ and [_https://github.com/eriqande/flockture_](https://github.com/eriqande/flockt
 ### Thomas Ng
 
 
-## Service and Assistance
+## Service, Assistance, and Interaction
 _Help to other researchers both in the lab and outside of the lab_
 
 
