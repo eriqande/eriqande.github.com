@@ -8,5 +8,5 @@ baseurl: /
 highlighter: pygments
 markdown: redcarpet
 
-exclude: [README.md]
+exclude: [README.md,Rmd,R-convert-rmd]
 
