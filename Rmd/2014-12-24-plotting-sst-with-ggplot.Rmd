@@ -12,7 +12,10 @@ opts_chunk$set(fig.width=6,
                fig.height=6,
                out.width = "600px",
                out.height = "420px",
-               fig.path = "../assets/plotting-sst-with-ggplot-")
+               fig.path = "../assets/plotting-sst-with-ggplot-",
+               warning = FALSE,
+               error =  FALSE,
+               message = FALSE)
 ```
 
 Roy M and I were curious about how one might go about efficiently and quickly

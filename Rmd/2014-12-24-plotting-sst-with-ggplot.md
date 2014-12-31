@@ -29,29 +29,10 @@ Before we get going, here are the libraries that I will be using:
 ```r
 library(stringr)
 library(ncdf4)
-```
-
-```
-## Warning: package 'ncdf4' was built under R version 3.1.1
-```
-
-```r
 library(reshape2)
 library(ggplot2)
 library(mapdata)
-```
-
-```
-## Loading required package: maps
-```
-
-```r
 library(maptools)
-```
-
-```
-## Loading required package: sp
-## Checking rgeos availability: TRUE
 ```
 
 
