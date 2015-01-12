@@ -8,5 +8,8 @@ baseurl: /
 highlighter: pygments
 markdown: redcarpet
 
-exclude: [README.md,Rmd,R-convert-rmd]
+exclude: [README.md,Rmd,R-convert-rmd,_worklogs/work-log-template.md]
 
+collections:
+  worklogs:
+    output: true

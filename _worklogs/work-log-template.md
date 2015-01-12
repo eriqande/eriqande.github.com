@@ -1,6 +1,8 @@
 ---
 layout: minimal_post
 title: Work Log
+date: 2012-12-12 10:00:00 
+published: false
 ---
 
 
