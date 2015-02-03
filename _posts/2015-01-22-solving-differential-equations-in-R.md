@@ -1,23 +1,10 @@
 ---
-title: "Solving ODEs in R"
-output: 
-  html_document:
-    keep_md: true
-    mathjax: "http://example.com/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+layout: minimal_post
+title: Solving ODEs in R
 ---
 
 
-```{r, include = FALSE}
-library(knitr)
-opts_chunk$set(fig.width=6,
-               fig.height=6,
-               out.width = "600px",
-               out.height = "420px",
-               fig.path = "../assets/solving-odes-in-R-",
-               warning = FALSE,
-               error =  FALSE,
-               message = FALSE)
-```
+
 
 Marc Mangel is offering a course in Quantitative Fisheries at NMFS' Southwest Fisheries Science Center
 (where I work).  Having spent the fall delivering a [course about using R](http://eriqande.github.io/rep-res-web/) to my NMFS 
@@ -49,7 +36,8 @@ I strongly recommend giving that a quick read through.
 
 ### Installing deSolve
 Installing `deSolve` is straightforward:
-```{r, eval=FALSE}
+
+```r
 install.packages("deSolve")
 ```
 
@@ -81,7 +69,8 @@ it and pretend we don't know the solution to the logistic.
 Well, it seems that \\(C_{max}(N(t))\\) must be whatever value will leave \\(\\frac{dN}{dt} = 0\\), so it is 
 just going to be \\(rN(1-N/K)\\).  Therefore we can easily compute a `Logistic` function that
 has a parameter `fract.of.max`, which we will call `fom` for short:
-```{r}
+
+```r
 library(deSolve)
 parameters <- c(r = 0.3, K = 10000, fom = 0)
 state <- c(N = 150)
@@ -98,7 +87,8 @@ Logistic <- function(t, state, parameters) {
 times <- seq(0, 300, by = 0.2)
 ```
 Now we can run that over a range of values of fom:
-```{r}
+
+```r
 fracts <- seq(0, 0.9, by = 0.1)
 names(fracts) <- paste("frac =", fracts)
 
@@ -109,19 +99,22 @@ list_results <- lapply(fracts, function(x) {
 ```
 
 Now we can make a long format data frame out of those and then plot with ggplot
-```{r}
+
+```r
 # make a long data frame of it
 ldf <- do.call(rbind, lapply(names(list_results), function(x) data.frame(list_results[[x]], x, stringsAsFactors = FALSE)))
 
 # plot with ggplot
 library(ggplot2)
 ggplot(data = ldf, aes(x = time, y = N, color = x)) + geom_line()
-
 ```
+
+<img src="{{ site.url }}/assets/solving-odes-in-R-unnamed-chunk-5.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5"   />
 
 Now, to get the times when you first cross 6,000 we can use
 `dplyr` (just for fun):
-```{r}
+
+```r
 library(dplyr)
 ldf <- tbl_df(ldf)
 
@@ -132,15 +125,34 @@ recov_times <- ldf %>%
 recov_times
 ```
 
+```
+## Source: local data frame [10 x 2]
+## 
+##             x recov
+## 1    frac = 0  15.4
+## 2  frac = 0.1  17.2
+## 3  frac = 0.2  19.2
+## 4  frac = 0.3  22.0
+## 5  frac = 0.4  25.6
+## 6  frac = 0.5  30.8
+## 7  frac = 0.6  38.4
+## 8  frac = 0.7  51.2
+## 9  frac = 0.8  76.6
+## 10 frac = 0.9 153.2
+```
+
 
 And then we can plot those against the fraction of the
 sustaining harvest.
-```{r}
+
+```r
 # here is some heinous sapply foo to break "frac = 0.1" to a numeric 0.1, etc....
 recov_times$foms <- as.numeric(sapply(strsplit(recov_times$x, " = "), "[", 2))
 
 ggplot(recov_times, aes(x = foms, y = recov, color = x)) + geom_point()
 ```
+
+<img src="{{ site.url }}/assets/solving-odes-in-R-unnamed-chunk-7.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7"   />
 
 But it seems that what is really interesting is the total harvest over that time.  
 
