@@ -57,17 +57,20 @@ you still seem to need it in the old location...to avoid some ssl cert errors.
 ### msys configuration
 
 In my home directory on `msys` I created a file `.profile` that looks like:
+
 ```
 exec bash
 
 ```
 Then I put there a `.bash_profile` with this:
+
 ```
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 ```
 And then a `.bashrc` that I put this into:
+
 ```
 export PATH=/c/ProgFiles/Git/bin:$PATH
 ```
@@ -89,6 +92,7 @@ I pretty much abhor using the `Windows Explorer` to navigate around, and double-
 bothers the sh*t out of me, so the last thing I want to be able to do is open up files on the command
 line.  Turns out that there is a `start` command in Windows that is already known in the `msys` bash 
 shell, so all I need to do is add this to my `.bashrc`:
+
 ```
 alias rs='start rstudio'
 alias np='start notepad++'
@@ -96,6 +100,7 @@ alias np='start notepad++'
 Note that those have to be single quotes.
 
 Now, things are pretty clean.  When I get onto my virtual machine I just go to the start menu and choose `msys.bat shortcut` and I get a bash shell.  Then:
+
 ```sh
 cd git-repos/lobster_checkin
 rs lobster_checkin.Rproj
