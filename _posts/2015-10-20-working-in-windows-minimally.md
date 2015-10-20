@@ -42,17 +42,36 @@ For this, I followed Anthony's detailed instructions:
 
 For this I did a standard install following the directions [here](http://www.mingw.org)
 
-### R and Rstudio
-
-I just downloaded these and did standard installs.  There was some funniness with dealing with Git.
 
 ### Git
 
-I downloaded and installed Git from [https://git-scm.com/download/win](https://git-scm.com/download/win). Simple install.  
+I downloaded and installed Git from [https://git-scm.com/download/win](https://git-scm.com/download/win). 
+Simple install.  If you want to use it on the `msys` command line, you have to put it in the PATH 
+(see below).  But, then you also have to configure it, as usual.  In the `msys` terminal I did this:
 
-After it was done I _copied_ the entire `Git` directory in `C:\Program Files` to a new directory I made
-called `C:\ProgFiles`, because later I was going to want it without a space in the path.  But for Rstudio
-you still seem to need it in the old location...to avoid some ssl cert errors.
+```
+git config --global user.email "eric.anderson@noaa.gov"
+git config --global user.name "Eric C. Anderson (From PC)"
+
+# and while at it, did this too:
+git config --global credential.helper wincred
+```
+and that takes care of it for command line use of `git` in the `msys` window.  However, 
+it appears that Rstudio takes the settings from elsewhere (or runs git in the dos prompt and
+it is incapable of getting to the `msys`-set configs from there).  So, in the 
+PC Command Window (not the `msys` terminal), I did this:
+
+```sh
+"C:\Program Files\Git\bin\git.exe" config --global user.email "eric.anderson@noaa.gov"
+"C:\Program Files\Git\bin\git.exe" config --global user.name "Eric C. Anderson (From PC)"
+```
+and while you are at it, you should do this, too:
+
+```sh
+"C:\Program Files\Git\bin\git.exe" config --global credential.helper wincred
+```
+which will let Rstudio cache my password so I can push to my repos without putting my password in
+every time.
 
 ### msys configuration
 
@@ -72,10 +91,25 @@ fi
 And then a `.bashrc` that I put this into:
 
 ```
-export PATH=/c/ProgFiles/Git/bin:$PATH
+export PATH='/c/Program Files/Git/bin':$PATH
 ```
-Here I have set the PATH to look in the `bin` directory of the `Git` folder that I copied into `C:\ProgFiles`.  So, I can access `git` from the command line on the `msys` terminal.
+Here I have set the PATH to look in the `bin` directory of the `Git` folder which was
+installed into `C:\Program Files`.  The single quotes apparently let `msys` deal with the 
+space in the file name. So, I can access `git` from the command line on the `msys` terminal.
 
+### R and Rstudio
+
+I just downloaded these and did standard installs.  Under `Tools -> Global Options` I had
+to point it to the git binary at `C:\Program Files\Git\bin\git.exe`.  It all seems to
+be working beautifully.  One big note, if I want to be able to push stuff up to my repositories
+on GitHub from the virtual machine I need to check them out from GitHub (through Rstudio,
+for example) with my GitHub username (`eriqande`). So, for example, the URL I use for my
+`newhybrids` repo when making a new Rstudio project is
+
+```
+https://eriqande@github.com/eriqande/newhybrids.git
+```
+Voila!
 
 ### A text editor
 Anthony recommended [notepad++](https://notepad-plus-plus.org) as a text editor.  I downloaded and
