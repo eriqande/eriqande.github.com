@@ -123,7 +123,8 @@ directory called `git-repos` into which I can clone any repos I need to work on 
 I am done I can push any changes up.
 
 I pretty much abhor using the `Windows Explorer` to navigate around, and double-clicking on things
-bothers the sh*t out of me, so the last thing I want to be able to do is open up files on the command
+bothers the sh*t out of me, so the final thing I want to make
+sure I can do is open up files on the command
 line.  Turns out that there is a `start` command in Windows that is already known in the `msys` bash 
 shell, so all I need to do is add this to my `.bashrc`:
 
