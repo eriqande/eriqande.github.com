@@ -1,6 +1,6 @@
 # A github:pages blog using jekyll
 
-I put together a [http://eriqande.github.io/rep-res-web/](course website) on GitHub using Rmarkdown and building stuff locally.
+I put together a [course website](http://eriqande.github.io/rep-res-web/) on GitHub using Rmarkdown and building stuff locally.
 That was a fun experience, but kind of a hassle in some ways.  For a lightweight GitHub Pages experience I grabbed some
 templates from https://github.com/christopherpoole/ghpblog
 
