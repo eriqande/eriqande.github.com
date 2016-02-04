@@ -5,7 +5,7 @@ link: https://github.com/eriqande/eriqande.github.com
 copyright: US Federal Gov't Work. Public Domain.
 #url: http://eriqande.github.io
 baseurl: /
-highlighter: pygments
+highlighter: rouge
 markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis"]
