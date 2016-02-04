@@ -6,9 +6,7 @@ copyright: US Federal Gov't Work. Public Domain.
 #url: http://eriqande.github.io
 baseurl: /
 highlighter: rouge
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis"]
+markdown: kramdown
 exclude: [README.md,Rmd,R-convert-rmd,_worklogs/work-log-template.md]
 
 collections:
